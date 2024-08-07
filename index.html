@@ -90,6 +90,8 @@
         <script type="text/javascript">
           document.getElementById('moving-form').addEventListener('submit', function(event) {
               event.preventDefault();
+               const form = this;
+        console.log("Form data:", new FormData(form));
               emailjs.sendForm('service_p0g5jbk', 'template_wz8p6rs', this)
                   .then(function() {
                       alert('Message envoyé avec succès!');
