@@ -1,0 +1,108 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchro Pro - Service de déménagement à Gatineau</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("oz9b-1ITXPV9Il1Z4"); 
+        })();
+    </script>
+    </head>
+    <body>
+      <header>
+        <img src="image/logo.jpg" alt="Logo de Synchro Pro avec des éléments graphiques en gris, noir et vert" class="logo">
+        <h1>Synchro Pro</h1>
+        <p>Service, transport, déménagement à Gatineau, Québec</p>
+      </header>
+      
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Nos Services</a></li>
+          <li><a href="#soumission">Demande de Soumission</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <main>
+        <section id="accueil">
+          <h2>Bienvenue chez Synchro Pro</h2>
+          <p>Votre partenaire de confiance pour tous vos besoins de déménagement à Gatineau et au-delà.</p>
+        </section>
+        
+        <section id="services">
+          <h2>Nos Services</h2>
+          <ul>
+            <li>Déménagement résidentiel</li>
+            <li>Déménagement commercial</li>
+            <li>Déménagement longue distance</li>
+          </ul>
+        </section>
+        
+        <section id="soumission">
+          <h2>Demande de Soumission</h2>
+          <form id="moving-form">
+            <label for="name">Nom et Prénom :</label><br>
+            <input type="text" id="name" name="name" required><br>
+    
+            <label for="contact">Numéro de Téléphone ou Email :</label><br>
+            <input type="text" id="contact" name="contact" required><br>
+    
+            <label for="departure-address">Adresse de Départ :</label><br>
+            <input type="text" id="departure-address" name="departure_address" required><br>
+    
+            <label for="arrival-address">Adresse d'Arrivée :</label><br>
+            <input type="text" id="arrival-address" name="arrival_address" required><br>
+    
+            <label for="boxes">Nombre de Boîtes environ :</label><br>
+            <select id="boxes" name="boxes" required>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="200+">Plus de 200</option>
+            </select><br>
+    
+            <label for="residence-type">Type de Résidence :</label><br>
+            <select id="residence-type" name="residence_type" required>
+                <option value="house">Maison</option>
+                <option value="apartment">Appartement</option>
+            </select><br>
+    
+            <label for="rooms">Nombre de Chambres :</label><br>
+            <input type="number" id="rooms" name="rooms" min="1" required><br>
+    
+            <label for="appliances">Électroménagers :</label><br>
+            <textarea id="appliances" name="appliances" rows="4"></textarea><br>
+    
+            <label for="furniture">Mobilier :</label><br>
+            <textarea id="furniture" name="furniture" rows="4"></textarea><br>
+    
+            <button type="submit">Envoyer</button>
+        </form>
+        <script type="text/javascript">
+          document.getElementById('moving-form').addEventListener('submit', function(event) {
+              event.preventDefault();
+              emailjs.sendForm('Yservice_yw49162', 'template_wz8p6rs', this)
+                  .then(function() {
+                      alert('Message envoyé avec succès!');
+                  }, function(error) {
+                      alert('Erreur lors de l\'envoi du message : ' + JSON.stringify(error));
+                  });
+          });
+      </script>
+        </section>
+        
+        <section id="contact">
+          <h2>Contactez-nous</h2>
+          <p>Téléphone: 819-661-0392</p>
+          <p>Suivez-nous sur <a href="https://www.facebook.com/people/D%C3%A9m%C3%A9nagement-Synchro-Pro/100063980439766/">Facebook</a></p>
+        </section>
+      </main>
+    
+      
+    
+    </body></html>
