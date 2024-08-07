@@ -70,21 +70,27 @@
     <input type="text" id="furniture" name="furniture"><br>
     <button type="submit">Send</button>
 </form>
-        <script type="text/javascript">
-          document.getElementById('moving-form').addEventListener('submit', function(event) {
-              event.preventDefault();
+      <script type="text/javascript">
+    document.getElementById('test-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Log form data
         const formData = new FormData(this);
         for (const [key, value] of formData.entries()) {
             console.log(key, value);
         }
-              emailjs.sendForm('service_p0g5jbk', 'template_wz8p6rs', '#myForm')
-                  .then(function() {
-                      alert('Message envoyé avec succès!');
-                  }, function(error) {
-                      alert('Erreur lors de l\'envoi du message : ' + JSON.stringify(error));
-                  });
-          });
-      </script>
+
+        const serviceID = 'YOUR_SERVICE_ID';
+        const templateID = 'YOUR_TEMPLATE_ID';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
+    });
+</script>
         </section>
         
         <section id="contact">
