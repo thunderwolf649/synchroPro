@@ -1,6 +1,4 @@
-<!Doctype html>
-<html>
-    <head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synchro Pro - Service de déménagement à Gatineau</title>
@@ -49,43 +47,56 @@
         
         <section id="soumission">
           <h2>Demande de Soumission</h2>
-         <form id="test-form">
-                <label for="name">Nom et Prénom:</label>
-                <input type="text" id="name" name="name"><br>
-                <label for="contact">Contact:</label>
-                <input type="text" id="contact" name="contact"><br>
-                <label for="departure_address">Adresse de Départ:</label>
-                <input type="text" id="departure_address" name="departure_address"><br>
-                <label for="arrival_address">Adresse d'Arrivée:</label>
-                <input type="text" id="arrival_address" name="arrival_address"><br>
-                <label for="boxes">Nombre de Boîtes:</label>
-                <input type="number" id="boxes" name="boxes"><br>
-                <label for="residence_type">Type de Résidence:</label>
-                <input type="text" id="residence_type" name="residence_type"><br>
-                <label for="rooms">Nombre de Chambres:</label>
-                <input type="number" id="rooms" name="rooms"><br>
-                <label for="appliances">Électroménagers:</label>
-                <input type="text" id="appliances" name="appliances"><br>
-                <label for="furniture">Mobilier:</label>
-                <input type="text" id="furniture" name="furniture"><br>
-                <button type="submit">Send</button>
-            </form>
-  
-    <script>
-        document.getElementById('test-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const serviceID = 'service_p0g5jbk';
-            const templateID = 'template_wz8p6rs';
-
-            emailjs.sendForm(serviceID, templateID, '#test-form')
-                .then((response) => {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, (error) => {
-                    console.log('FAILED...', error);
-                });
-        });
-    </script>
+          <form id="moving-form">
+            <label for="name">Nom et Prénom :</label><br>
+            <input type="text" id="name" name="name" required><br>
+    
+            <label for="contact">Numéro de Téléphone ou Email :</label><br>
+            <input type="text" id="contact" name="contact" required><br>
+    
+            <label for="departure-address">Adresse de Départ :</label><br>
+            <input type="text" id="departure-address" name="departure_address" required><br>
+    
+            <label for="arrival-address">Adresse d'Arrivée :</label><br>
+            <input type="text" id="arrival-address" name="arrival_address" required><br>
+    
+            <label for="boxes">Nombre de Boîtes environ :</label><br>
+            <select id="boxes" name="boxes" required>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="200+">Plus de 200</option>
+            </select><br>
+    
+            <label for="residence-type">Type de Résidence :</label><br>
+            <select id="residence-type" name="residence_type" required>
+                <option value="house">Maison</option>
+                <option value="apartment">Appartement</option>
+            </select><br>
+    
+            <label for="rooms">Nombre de Chambres :</label><br>
+            <input type="number" id="rooms" name="rooms" min="1" required><br>
+    
+            <label for="appliances">Électroménagers :</label><br>
+            <textarea id="appliances" name="appliances" rows="4"></textarea><br>
+    
+            <label for="furniture">Mobilier :</label><br>
+            <textarea id="furniture" name="furniture" rows="4"></textarea><br>
+    
+            <button type="submit">Envoyer</button>
+        </form>
+        <script type="text/javascript">
+          document.getElementById('moving-form').addEventListener('submit', function(event) {
+              event.preventDefault();
+              emailjs.sendForm('service_p0g5jbk', 'template_wz8p6rs', this)
+                  .then(function() {
+                      alert('Message envoyé avec succès!');
+                  }, function(error) {
+                      alert('Erreur lors de l\'envoi du message : ' + JSON.stringify(error));
+                  });
+          });
+      </script>
         </section>
         
         <section id="contact">
