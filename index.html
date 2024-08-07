@@ -3,16 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synchro Pro - Service de déménagement à Gatineau</title>
     <link rel="stylesheet" href="style.css">
-   <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "oz9b-1ITXPV9I1IZ4",
-      });
-   })();
-</script>
+   
     </head>
     <body>
       <header>
@@ -47,7 +38,7 @@
         
         <section id="soumission">
           <h2>Demande de Soumission</h2>
-          <form id="moving-form" action="https://formsubmit.co/5089570fab23a09a244642eed93ad50d" method="post">
+          <form id="moving-form" action="https://formsubmit.co/el/wivude" method="post">
             <label for="name">Nom et Prénom :</label><br>
             <input type="text" id="name" name="name" required><br>
     
@@ -86,19 +77,7 @@
     
             <button type="submit">Envoyer</button>
         </form>
-        <script type="text/javascript">
-          document.getElementById('moving-form').addEventListener('submit', function(event) {
-              event.preventDefault();
-              emailjs.sendForm('service_p0g5jbk', 'template_wz8p6rs', this)
-                  .then(function() {
-                      alert('Message envoyé avec succès!');
-                  }, function(error) {
-                      alert('Erreur lors de l\'envoi du message : ' + JSON.stringify(error));
-                  });
-          });
-      </script>
         </section>
-        
         <section id="contact">
           <h2>Contactez-nous</h2>
           <p>Téléphone: 819-661-0392</p>
