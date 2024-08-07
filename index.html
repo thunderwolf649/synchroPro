@@ -41,15 +41,15 @@
           <form action="https://api.web3forms.com/submit" method="POST">
            <input type="hidden" name="access_key" value="dde9d989-80dd-44ea-a329-5f5be867ea2a">
             <label for="name">Nom et Prénom :</label><br>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" name="name" required><br>
             <label for="contact">Numéro de Téléphone ou Email :</label><br>
-            <input type="text" id="contact" name="contact" required><br>
+            <input type="text" name="contact" required><br>
             <label for="departure-address">Adresse de Départ :</label><br>
-            <input type="text" id="departure-address" name="departure_address" required><br>
+            <input type="text" name="departure_address" required><br>
             <label for="arrival-address">Adresse d'Arrivée :</label><br>
-            <input type="text" id="arrival-address" name="arrival_address" required><br>
+            <input type="text" name="arrival_address" required><br>
             <label for="boxes">Nombre de Boîtes environ :</label><br>
-            <select id="boxes" name="boxes" required>
+            <select name="boxes" required>
                 <option value="50">50</option>
                 <option value="100">100</option>
                 <option value="150">150</option>
@@ -57,16 +57,16 @@
                 <option value="200+">Plus de 200</option>
             </select><br>
             <label for="residence-type">Type de Résidence :</label><br>
-            <select id="residence-type" name="residence_type" required>
+            <select  name="residence_type" required>
                 <option value="house">Maison</option>
                 <option value="apartment">Appartement</option>
             </select><br>
             <label for="rooms">Nombre de Chambres :</label><br>
-            <input type="number" id="rooms" name="rooms" min="1" required><br>
+            <input type="number" name="rooms" min="1" required><br>
             <label for="appliances">Électroménagers :</label><br>
-            <textarea id="appliances" name="appliances" rows="4"></textarea><br>
+            <textarea  name="appliances" rows="4"></textarea><br>
             <label for="furniture">Mobilier :</label><br>
-            <textarea id="furniture" name="furniture" rows="4"></textarea><br>
+            <textarea name="furniture" rows="4"></textarea><br>
             <button type="submit">Envoyer</button>
         </form>
         </section>
